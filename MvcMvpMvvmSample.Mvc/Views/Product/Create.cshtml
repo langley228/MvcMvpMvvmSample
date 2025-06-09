@@ -1,0 +1,9 @@
+@{
+    ViewData["Title"] = "新增產品";
+}
+<h2>新增產品</h2>
+<form asp-action="Create" method="post">
+    <input type="text" name="name" placeholder="產品名稱" required />
+    <button type="submit">新增</button>
+</form>
+<a href="/Product">回產品列表</a>

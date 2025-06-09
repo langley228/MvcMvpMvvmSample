@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MvcMvpMvvmSample.Mvvm.ViewModels.ProductViewModel>
+
+<h2>產品列表</h2>
+<a asp-action="Create">新增產品</a>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>操作</th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Name</td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">編輯</a>
+            <form asp-action="Delete" method="post" style="display:inline">
+                <input type="hidden" name="id" value="@item.Id" />
+                <button type="submit">刪除</button>
+            </form>
+        </td>
+    </tr>
+}
+</table>

@@ -1,0 +1,9 @@
+@model MvcMvpMvvmSample.Data.Models.Product
+
+<h2>編輯產品</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <input type="text" name="name" value="@Model.Name" required />
+    <button type="submit">儲存</button>
+</form>
+<a href="/Product">回產品列表</a>
